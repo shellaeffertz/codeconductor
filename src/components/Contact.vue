@@ -92,7 +92,11 @@ onMounted(() => {
           class="group relative bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300 animate-on-scroll animate-slide-in"
           :style="`transition-delay: ${0.4 + index * 0.2}s`"
         >
-          <div class="space-y-4">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-yellow-500/0 via-yellow-500/5 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl animate-scale-up"
+          ></div>
+          
+          <div class="relative space-y-4">
             <div class="flex items-center justify-center">
               <i :class="[contact.icon, 'fa-2x', 'text-yellow-500', 'animate-bounce']"></i>
             </div>
@@ -126,11 +130,6 @@ onMounted(() => {
               </a>
             </div>
           </div>
-
-          <!-- Hover Effect -->
-          <div
-            class="absolute inset-0 bg-gradient-to-r from-yellow-500/0 via-yellow-500/5 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl animate-scale-up"
-          ></div>
         </div>
       </div>
 

@@ -50,7 +50,7 @@ onMounted(() => {
           We are a team of freelancers who deliver customized web development, design, and digital solutions that turn ideas into impactful products. Let's bring your vision to life with quality and creativity.
         </p>
 
-        <button class="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold rounded-full transition-colors duration-200 transform hover:scale-105">
+        <button class="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold rounded-full duration-300 transform hover:scale-105">
           Get Started
         </button>
       </div>
