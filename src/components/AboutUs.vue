@@ -1,5 +1,8 @@
 <script setup>
+
 import { ref, onMounted } from 'vue';
+import EndSection from './EndSection.vue';
+import SectionHeader from './SectionHeader.vue';
 
 const team = ref([
   {
@@ -77,20 +80,22 @@ onMounted(() => {
 <template>
   <section class="relative max-w-7xl mx-auto px-6 min-h-screen text-white overflow-hidden py-24">
     <div class="relative z-10 space-y-16">
-      <!-- Header -->
-      <div
-        class="text-center space-y-4 animate-on-scroll"
-        style="transition: all 0.8s ease-out 0.2s"
-      >
-        <h3 class="text-yellow-500 text-xl font-medium tracking-wide animate-pop-in">About Us</h3>
-        <h2 class="font-black text-5xl md:text-6xl bg-gradient-to-r from-white to-gray-300 bg-clip-text animate-gradient-pop">
+
+      <SectionHeader>
+
+        <template #subtitle>
+          About Us
+        </template>
+
+        <template #title>
           Passionate About<br />Technology
-        </h2>
-        <p class="max-w-2xl mx-auto text-gray-300 text-lg">
+        </template>
+
+        <template #description>
           We're a dynamic team of developers, designers, and digital craftsmen dedicated to turning your vision into exceptional digital experiences.
-        </p>
-        <div class="h-2 w-24 bg-yellow-500 rounded-full mx-auto animate-pulse-fast"></div>
-      </div>
+        </template>
+
+      </SectionHeader>
 
       <!-- Stats Grid -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 animate-on-scroll" style="transition: all 0.8s ease-out 0.4s">
@@ -131,56 +136,27 @@ onMounted(() => {
         </div>
       </div>
 
-      <!-- Mission Statement -->
-      <div 
-        class="max-w-3xl mx-auto text-center space-y-6 animate-on-scroll"
-        style="transition: all 0.8s ease-out 1.4s"
-      >
-        <h3 class="text-2xl font-bold text-yellow-500">Our Mission</h3>
-        <p class="text-gray-300 leading-relaxed">
+      <EndSection>
+
+        <template #title>
+          Our Mission
+        </template>
+
+        <template #description>
           To deliver cutting-edge solutions that empower businesses to thrive in the digital age. We combine technical excellence with creative innovation to create lasting value for our clients.
-        </p>
-        <button class="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold rounded-full transition-colors duration-200 animate-pop-in mt-4">
+        </template>
+
+        <template #btn-label>
           Meet Our Team
-        </button>
-      </div>
+        </template>
+
+      </EndSection>
+
     </div>
   </section>
 </template>
 
 <style scoped>
-@keyframes gradient-pop {
-  0% {
-    background-size: 100%;
-    opacity: 0;
-  }
-  100% {
-    background-size: 100%;
-    opacity: 1;
-  }
-}
-
-.animate-gradient-pop {
-  animation: gradient-pop 1s ease forwards;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Reuse existing animations from your code */
-@keyframes pop-in {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.animate-pop-in {
-  animation: pop-in 0.8s ease forwards;
-}
 
 .animate-on-scroll {
   opacity: 0;
@@ -193,16 +169,4 @@ onMounted(() => {
   transform: translateY(0);
 }
 
-.animate-pulse-fast {
-  animation: pulse-slow 1s ease-in-out infinite;
-}
-
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
 </style>

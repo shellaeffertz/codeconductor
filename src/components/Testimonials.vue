@@ -1,5 +1,8 @@
 <script setup>
+
 import { ref, onMounted } from 'vue';
+import EndSection from './EndSection.vue';
+import SectionHeader from './SectionHeader.vue';
 
 const isVisible = ref(false);
 const currentTestimonial = ref(0);
@@ -78,18 +81,22 @@ const goToPrev = () => {
   <section class="testimonial-section relative max-w-7xl mx-auto px-6 min-h-[80vh] text-white overflow-hidden py-24">
 
     <div class="relative z-10 space-y-16">
-      <!-- Header -->
-      <div
-        class="text-center space-y-4"
-        :class="{ 'opacity-0 translate-y-8': !isVisible, 'opacity-100 translate-y-0': isVisible }"
-        style="transition: all 1s ease-out 0.2s"
-      >
-        <h3 class="text-yellow-500 text-xl font-medium tracking-wide animate-pop-in">Testimonials</h3>
-        <h2 class="font-black text-5xl md:text-6xl bg-gradient-to-r from-white to-gray-300 bg-clip-text animate-gradient-pop">
+
+      <SectionHeader>
+
+        <template #subtitle>
+          Testimonials
+        </template>
+
+        <template #title>
           What Our Clients Say
-        </h2>
-        <div class="h-2 w-24 bg-yellow-500 rounded-full mx-auto animate-pulse-fast"></div>
-      </div>
+        </template>
+
+        <template #description>
+          Hear from our clients about how we've helped bring their visions to life, creating impactful digital experiences that drive success and growth.
+        </template>
+
+      </SectionHeader>
 
       <!-- Testimonials Carousel -->
       <div
@@ -154,31 +161,25 @@ const goToPrev = () => {
               </div>
             </transition-group>
           </div>
-
-          <!-- Navigation Dots -->
-          <div class="absolute -bottom-12 left-1/2 -translate-x-1/2 flex gap-3">
-            <button
-              v-for="(testimonial, index) in testimonials"
-              :key="testimonial.name"
-              @click="goToTestimonial(index)"
-              class="w-3 h-3 rounded-full transition-all duration-300"
-              :class="currentTestimonial === index ? 'bg-yellow-500 scale-125 animate-pulse-fast' : 'bg-gray-600 hover:bg-gray-500'"
-            ></button>
-          </div>
         </div>
       </div>
 
-      <!-- Call to Action -->
-      <div
-        class="text-center space-y-6"
-        :class="{ 'opacity-0 translate-y-8': !isVisible, 'opacity-100 translate-y-0': isVisible }"
-        style="transition: all 1.2s ease-out 0.6s"
-      >
-        <p class="text-gray-300 text-lg">Ready to join our success stories?</p>
-        <button class="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold rounded-full transition-colors duration-200 animate-pop-in">
+      <EndSection>
+
+        <template #title>
+          Ready to join our success stories?
+        </template>
+
+        <template #description>
+          Take the first step toward transforming your ideas into reality. Partner with us to create something remarkable and add your story to our growing list of successes.
+        </template>
+
+        <template #btn-label>
           Start Your Journey
-        </button>
-      </div>
+        </template>
+
+      </EndSection>
+
     </div>
 
   </section>
@@ -186,28 +187,7 @@ const goToPrev = () => {
 </template>
 
 <style scoped>
-/* Existing animations */
-@keyframes pop-in {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-/* New slide animations */
 .slide-next-enter-active,
 .slide-next-leave-active,
 .slide-prev-enter-active,
@@ -217,7 +197,6 @@ const goToPrev = () => {
   width: 100%;
 }
 
-/* Slide Next */
 .slide-next-enter-from {
   transform: translateX(100%);
   opacity: 0;
@@ -228,7 +207,6 @@ const goToPrev = () => {
   opacity: 0;
 }
 
-/* Slide Previous */
 .slide-prev-enter-from {
   transform: translateX(-100%);
   opacity: 0;
@@ -239,22 +217,13 @@ const goToPrev = () => {
   opacity: 0;
 }
 
-/* Common transitions */
 .slide-next-enter-active,
 .slide-prev-enter-active {
   z-index: 1;
 }
 
-/* Utility classes */
-.animate-pop-in {
-  animation: pop-in 0.8s ease forwards;
-}
-
-.animate-pulse-fast {
-  animation: pulse-slow 1s ease-in-out infinite;
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 2s ease-in-out infinite;
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>

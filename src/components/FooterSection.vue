@@ -124,7 +124,7 @@ onMounted(() => {
     </div>
 
     <p class="bg-gray-900 absolute bottom-0 left-0 w-full text-center py-4 border-t border-gray-700 text-gray-400 opacity-0 transform translate-y-8 transition-all duration-700 delay-800">
-      Made With &lt;3 By Me
+      &copy;2024 All Right Reserved
     </p>
   </footer>
 </template>

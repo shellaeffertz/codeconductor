@@ -1,5 +1,8 @@
 <script setup>
+
 import { ref, onMounted } from 'vue';
+import EndSection from './EndSection.vue';
+import SectionHeader from './SectionHeader.vue';
 
 const capabilities = ref([
   {
@@ -85,7 +88,6 @@ onMounted(() => {
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
   observeElements(animatedElements);
   
-  // Initialize particle system
   initParticles();
   animate();
 });
@@ -95,17 +97,23 @@ onMounted(() => {
   <section class="relative max-w-7xl mx-auto px-6 min-h-screen text-white overflow-hidden py-24">
 
     <div class="relative z-10 space-y-16">
-      <!-- Header -->
-      <div
-        class="text-center space-y-4 animate-on-scroll"
-        style="transition: all 0.8s ease-out 0.2s"
-      >
-        <h3 class="text-yellow-500 text-xl font-medium tracking-wide animate-pop-in">What We Do</h3>
-        <h2 class="font-black text-5xl md:text-6xl bg-gradient-to-r from-white to-gray-300 bg-clip-text animate-gradient-pop">
+
+      <SectionHeader>
+
+        <template #subtitle>
+          What We Do
+        </template>
+
+        <template #title>
           Transforming Ideas<br />Into Reality
-        </h2>
-        <div class="h-2 w-24 bg-yellow-500 rounded-full mx-auto animate-pulse-fast"></div>
-      </div>
+        </template>
+
+        <template #description>
+          We specialize in bringing ideas to life through innovative digital solutions. From design to development, our team combines creativity and technical skill to build experiences that captivate and connect.
+        </template>
+
+      </SectionHeader>
+
 
       <!-- Capabilities Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -134,80 +142,27 @@ onMounted(() => {
         </template>
       </div>
 
-      <!-- Call to Action -->
-      <div
-        class="text-center animate-on-scroll"
-        style="transition: all 0.8s ease-out 1s"
-      >
-        <button class="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold rounded-full transition-colors duration-200 animate-pop-in">
-          Start Your Project
-        </button>
-      </div>
+     <EndSection>
+
+      <template #title>
+        Why Partner With Us
+      </template>
+
+      <template #description>
+        We’re driven to craft solutions that elevate your business in the digital landscape. Blending innovation with expertise, we create impactful results that last.
+      </template>
+
+      <template #btn-label>
+        Let’s Collaborate
+      </template>
+
+     </EndSection>
+
     </div>
   </section>
 </template>
 
 <style scoped>
-@keyframes float-slow {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) scale(1.05);
-  }
-}
-
-@keyframes pop-in {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.particle {
-  transform-origin: center;
-  transition: all 0.3s ease;
-}
-
-.animate-float-slow {
-  animation: float-slow 6s ease-in-out infinite;
-}
-.animate-pop-in {
-  animation: pop-in 0.8s ease forwards;
-}
-.animate-slide-in {
-  animation: slide-in 1.2s ease forwards;
-}
-.animate-pulse-slow {
-  animation: pulse-slow 4s ease-in-out infinite;
-}
-.animate-pulse-fast {
-  animation: pulse-slow 1s ease-in-out infinite;
-}
 
 .animate-on-scroll {
   opacity: 0;
@@ -220,7 +175,4 @@ onMounted(() => {
   transform: translateY(0);
 }
 
-.bg-gradient-radial {
-  background-image: radial-gradient(var(--tw-gradient-stops));
-}
 </style>

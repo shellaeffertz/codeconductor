@@ -1,5 +1,8 @@
 <script setup>
+
 import { ref, onMounted } from 'vue';
+import EndSection from './EndSection.vue';
+import SectionHeader from './SectionHeader.vue';
 
 const isVisible = ref(false);
 const currentProject = ref(0);
@@ -98,18 +101,23 @@ const goToPrev = () => {
 <template>
   <section class="portfolio-section relative max-w-7xl mx-auto px-6 min-h-[90vh] text-white overflow-hidden py-24">
     <div class="relative z-10 space-y-16">
-      <!-- Header -->
-      <div
-        class="text-center space-y-4"
-        :class="{ 'opacity-0 translate-y-8': !isVisible, 'opacity-100 translate-y-0': isVisible }"
-        style="transition: all 1s ease-out 0.2s"
-      >
-        <h3 class="text-yellow-500 text-xl font-medium tracking-wide animate-pop-in">Our Portfolio</h3>
-        <h2 class="font-black text-5xl md:text-6xl bg-gradient-to-r from-white to-gray-300 bg-clip-text animate-gradient-pop">
+      
+      <SectionHeader>
+
+        <template #subtitle>
+          Our Portfolio
+        </template>
+
+        <template #title>
           Featured Projects
-        </h2>
-        <div class="h-2 w-24 bg-yellow-400 rounded-full mx-auto animate-pulse-fast"></div>
-      </div>
+        </template>
+
+        <template #description>
+          Discover a showcase of our standout projects, where innovation and expertise come together to create impactful digital solutions tailored to our clients' goals.
+        </template>
+
+      </SectionHeader>
+
 
       <!-- Projects Carousel -->
       <div
@@ -204,55 +212,31 @@ const goToPrev = () => {
               </div>
             </transition-group>
           </div>
-
-          <!-- Navigation Dots -->
-          <div class="absolute -bottom-12 left-1/2 -translate-x-1/2 flex gap-3">
-            <button
-              v-for="(project, index) in projects"
-              :key="project.title"
-              @click="goToProject(index)"
-              class="w-3 h-3 rounded-full transition-all duration-300"
-              :class="currentProject === index ? 'bg-yellow-400 scale-125 animate-pulse-fast' : 'bg-gray-600 hover:bg-gray-500'"
-            ></button>
-          </div>
         </div>
       </div>
+    
 
-      <!-- Call to Action -->
-      <div
-        class="text-center space-y-6"
-        :class="{ 'opacity-0 translate-y-8': !isVisible, 'opacity-100 translate-y-0': isVisible }"
-        style="transition: all 1.2s ease-out 0.6s"
-      >
-        <p class="text-gray-300 text-lg">Interested in working with us?</p>
-        <button class="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold rounded-full transition-colors duration-200 animate-pop-in">
+      <EndSection>
+
+        <template #title>
+          Interested in working with us?
+        </template>
+
+        <template #description>
+          We’re excited to collaborate and bring your ideas to life. Let’s connect and explore how we can create extraordinary solutions together.
+        </template>
+
+        <template #btn-label>
           Let's Build Something Amazing
-        </button>
-      </div>
+        </template>
+
+      </EndSection>
+
     </div>
   </section>
 </template>
 
 <style scoped>
-@keyframes pop-in {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
 
 .slide-next-enter-active,
 .slide-next-leave-active,
@@ -288,15 +272,8 @@ const goToPrev = () => {
   z-index: 1;
 }
 
-.animate-pop-in {
-  animation: pop-in 0.8s ease forwards;
-}
-
-.animate-pulse-fast {
-  animation: pulse-slow 1s ease-in-out infinite;
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 2s ease-in-out infinite;
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>

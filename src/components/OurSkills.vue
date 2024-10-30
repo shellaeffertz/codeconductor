@@ -1,5 +1,8 @@
 <script setup>
+
 import { ref, onMounted } from 'vue';
+import EndSection from './EndSection.vue';
+import SectionHeader from './SectionHeader.vue';
 
 const isVisible = ref(false);
 const skills = [
@@ -65,19 +68,22 @@ onMounted(() => {
   <section class="skills-section relative max-w-7xl mx-auto px-6 min-h-screen text-white overflow-hidden py-24">
 
     <div class="relative z-10 space-y-16">
-      <!-- Header -->
-      <div
-        class="text-center space-y-4 transition-all duration-800 ease-out delay-200"
-        :class="{ 'opacity-0 translate-y-8': !isVisible, 'opacity-100 translate-y-0': isVisible }"
-      >
-        <h3 class="text-yellow-500 text-xl font-medium tracking-wide animate-pop-in">
+
+      <SectionHeader>
+
+        <template #subtitle>
           Our Expertise
-        </h3>
-        <h2 class="font-black text-5xl md:text-6xl bg-gradient-to-r from-white to-gray-300 bg-clip-text">
+        </template>
+
+        <template #title>
           Skills & Technologies
-        </h2>
-        <div class="h-2 w-24 bg-yellow-500 rounded-full mx-auto animate-pulse-fast"></div>
-      </div>
+        </template>
+
+        <template #description>
+          Leveraging the latest tools and technologies, we bring a diverse skill set to every project, ensuring innovative and tailored solutions that meet your unique needs.
+        </template>
+
+      </SectionHeader>
 
       <!-- Skills Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -126,60 +132,35 @@ onMounted(() => {
         </div>
       </div>
 
-      <div
-        class="text-center space-y-6 transition-all duration-800 ease-out delay-800"
-        :class="{ 'opacity-0 translate-y-8': !isVisible, 'opacity-100 translate-y-0': isVisible }"
-      >
-        <p class="text-gray-300 text-lg">
+      <EndSection>
+
+        <template #title>
           Looking for specific technical expertise?
-        </p>
-        <button class="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold rounded-full transition-colors duration-200">
+        </template>
+
+        <template #description>
+          Explore how our specialized knowledge can bring your vision to life. We're ready to collaborate and deliver the expertise your project deserves.
+        </template>
+
+        <template #btn-label>
           Let's Discuss Your Project
-        </button>
-      </div>
+        </template>
+
+      </EndSection>
+
     </div>
   </section>
 </template>
 
 <style scoped>
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) scale(1.05);
-  }
-}
 
 .progress-bar {
   transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes pop-in {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.animate-pop-in {
-  animation: pop-in 0.8s ease forwards;
-}
-
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.animate-pulse-fast {
-  animation: pulse-slow 1s ease-in-out infinite;
-}
 </style>

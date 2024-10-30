@@ -1,5 +1,8 @@
 <script setup>
+
 import { ref, onMounted } from 'vue';
+import EndSection from './EndSection.vue';
+import SectionHeader from './SectionHeader.vue';
 
 const copiedContact = ref(null);
 
@@ -64,22 +67,22 @@ onMounted(() => {
 <template>
   <section class="relative max-w-7xl mx-auto px-6 min-h-screen text-white overflow-hidden py-24">
     <div class="relative z-10 space-y-16">
-      <!-- Header -->
-      <div
-        class="text-center space-y-4 animate-on-scroll"
-        style="transition-delay: 0.2s"
-      >
-        <h3 class="text-yellow-500 text-xl font-medium tracking-wide animate-pop-in">
+
+      <SectionHeader>
+
+        <template #subtitle>
           Get in Touch
-        </h3>
-        <h2 class="font-black text-5xl md:text-6xl bg-gradient-to-r from-white to-gray-300 bg-clip-text animate-gradient-pop">
+        </template>
+
+        <template #title>
           Contact Us
-        </h2>
-        <p class="max-w-2xl mx-auto text-gray-300 text-lg animate-fade-in">
+        </template>
+
+        <template #description>
           We're here to help! Reach out to us using any of the contact methods below.
-        </p>
-        <div class="h-2 w-24 bg-yellow-500 rounded-full mx-auto animate-pulse-fast"></div>
-      </div>
+        </template>
+
+      </SectionHeader>
 
       <!-- Contact Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -131,12 +134,22 @@ onMounted(() => {
         </div>
       </div>
 
-      <!-- Call to Action -->
-      <div class="text-center animate-on-scroll animate-fade-in" style="transition-delay: 1s">
-        <button class="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold rounded-full transition-colors duration-200 animate-pop-in">
-          Start a Project
-        </button>
-      </div>
+      <EndSection>
+
+        <template #title>
+          We’d Love to Hear From You
+        </template>
+
+        <template #description>
+          Whether you have a question about our services, want to discuss your project, or just want to say hello, feel free to reach out. Our team is here to assist you!
+        </template>
+
+        <template #btn-label>
+          Contact Us Today
+        </template>
+
+      </EndSection>
+
     </div>
   </section>
 </template>
@@ -189,19 +202,6 @@ onMounted(() => {
   animation: slide-in 0.8s ease forwards;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.8s ease forwards;
-}
-
 @keyframes scale-up {
   from {
     transform: scale(0.8);
@@ -237,18 +237,5 @@ onMounted(() => {
 .is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.animate-pulse-fast {
-  animation: pulse-slow 1s ease-in-out infinite;
-}
-
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
 }
 </style>
