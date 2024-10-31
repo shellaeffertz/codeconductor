@@ -21,7 +21,7 @@ import BackgroundView from './components/BackgroundView.vue';
 
   <Navbar />
 
-  <!-- <BackgroundView /> -->
+  <BackgroundView />
 
   <Home />
 

@@ -56,8 +56,6 @@
 
 .animate-gradient-pop {
   animation: gradient-pop 1s ease forwards;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .animate-pulse-fast {
