@@ -31,7 +31,7 @@ const generateInitialSymbols = () => {
 const handleScroll = () => {
 
       if (Math.random() < 0.3) {
-        codeSymbols.value.push(this.createCodeSymbol());
+        codeSymbols.value.push(createCodeSymbol());
         
         if (codeSymbols.value.length > 100) {
           codeSymbols.value.shift();

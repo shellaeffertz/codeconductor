@@ -23,19 +23,19 @@ import BackgroundView from './components/BackgroundView.vue';
 
   <BackgroundView />
 
-  <Home />
+  <Home id="home" class="mt-16 sm:mt-0" />
 
-  <AboutUs />
+  <AboutUs id="about-us" />
   
-  <WhatCanWeDo />
+  <WhatCanWeDo id="services" />
 
   <Testimonials />
 
   <OurSkills />
 
-  <Projects />
+  <Projects id="projects" />
 
-  <Contact />
+  <Contact id="contact" />
 
   <FooterSection />
 
@@ -47,6 +47,25 @@ import BackgroundView from './components/BackgroundView.vue';
 
 html {
   scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom right, #111827, #1f2937, #111827);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #eab308;
+  border-radius: 8px;
+  border: 2px solid #1f2937;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #facc15;
 }
 
 </style>

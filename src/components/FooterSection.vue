@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <footer class="bg-gray-900 pb-24 pt-8 relative text-gray-400"> 
+  <footer class="bg-gray-900/80 backdrop-blur-md pb-24 pt-8 relative text-gray-400"> 
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
       
       <!-- Zewana Info & Social Links -->
