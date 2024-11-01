@@ -27,7 +27,7 @@ const menuItems = [
     href: '#home'
   },
   { 
-    label: 'About', 
+    label: 'About Us', 
     icon: 'fa-solid fa-user',
     href: '#about-us'
   },

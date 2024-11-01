@@ -156,7 +156,7 @@ const goToPrev = () => {
                 <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 h-full">
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
                     <!-- Project Image -->
-                    <div class="relative group overflow-hidden rounded-xl">
+                    <div class="relative group overflow-hidden rounded-xl hidden md:block">
                       <img
                         :src="project.image"
                         :alt="project.title"
@@ -200,10 +200,10 @@ const goToPrev = () => {
                         <div 
                           v-for="(value, key) in project.stats" 
                           :key="key"
-                          class="text-center p-4 bg-gray-700/30 rounded-lg"
+                          class="text-center py-4 bg-gray-700/30 rounded-lg"
                         >
-                          <p class="text-2xl font-bold text-yellow-500">{{ value }}</p>
-                          <p class="text-sm text-gray-400">{{ key.replace(/([A-Z])/g, ' $1').trim() }}</p>
+                          <p class="text-xl sm:text-2xl font-bold text-yellow-500">{{ value }}</p>
+                          <p class="text-xs sm:text-sm text-gray-400 text-center">{{ key.replace(/([A-Z])/g, ' $1').trim() }}</p>
                         </div>
                       </div>
                     </div>

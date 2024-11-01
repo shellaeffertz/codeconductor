@@ -2,12 +2,26 @@
 import { ref, onMounted } from 'vue';
 
 const isVisible = ref(false);
+
 const services = ref([
-  'Web Development',
-  'UI/UX Design',
-  'Mobile Apps',
-  'Digital Marketing'
+  {
+    name: 'Web Development',
+    icon: 'fa-solid fa-code'
+  },
+  {
+    name: 'UI/UX Design',
+    icon: 'fa solid fa-palette'
+  },
+  {
+    name: 'Mobile Apps',
+    icon: 'fa-solid fa-mobile'
+  },
+  {
+    name: 'Digital Marketing',
+    icon: 'fa-solid fa-chart-simple'
+  },
 ]);
+
 const currentService = ref(0);
 
 onMounted(() => {
@@ -29,7 +43,7 @@ onMounted(() => {
 
 <template>
 
-  <section class="services-section relative max-w-7xl mx-auto px-6 min-h-screen text-white overflow-hidden">
+  <section class="services-section relative max-w-7xl mx-auto px-6 min-h-screen text-white">
     
     <div class="relative z-10 flex justify-between flex-wrap items-center gap-12 mt-16 sm:mt-52">
       <!-- Left content -->
@@ -67,11 +81,10 @@ onMounted(() => {
               v-for="(service, index) in services" 
               :key="service"
               v-show="currentService === index"
-              class="absolute text-2xl space-x-2 text-gray-300 font-medium animate__animated animate__fadeIn"
+              class="absolute text-2xl space-x-2 text-gray-300 font-medium animate__animated animate__fadeIn min-w-64"
             >
-              <i v-if="service == 'Web Development'" class="fa-solid fa-code"></i>
-              <i v-else-if="service == 'Mobile Apps'" class="fa-solid fa-mobile"></i>
-              <span>{{ service }}</span>
+              <i :class="service.icon"></i>
+              <span>{{ service.name }}</span>
             </p>
           </transition-group>
         </div>

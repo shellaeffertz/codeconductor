@@ -14,9 +14,9 @@
         <p class="text-gray-300 leading-relaxed">
           <slot name="description" />
         </p>
-        <button class="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold rounded-full transition-colors duration-200 animate-pop-in mt-4">
+        <a href="#contact" class="block w-fit mx-auto px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold rounded-full transition-colors duration-200 animate-pop-in mt-4">
           <slot name="btn-label" />
-        </button>
+        </a>
     </div>
 
 </template>
