@@ -37,7 +37,7 @@ onUnmounted(() => {
 
 <template>
 
-  <span ref="scrollProgress" class="block fixed top-0 left-0 bg-yellow-500 h-1 z-[99999]" style="width: 0%"></span>
+  <span ref="scrollProgress" class="block fixed top-0 left-0 bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 h-1 z-[99999]" style="width: 0%"></span>
 
 </template>
 

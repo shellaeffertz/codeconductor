@@ -28,7 +28,7 @@ onMounted(() => {
 
 <template>
     
-    <button id="toTopBtn" class="block w-14 h-14 rounded-full border border-yellow-500 bg-yellow-500 hover:bg-yellow-400 fixed z-50 bottom-10 -right-14 duration-200 animate-bounce" type="button">
+    <button id="toTopBtn" class="block w-14 h-14 rounded-full border border-yellow-500 bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 hover:bg-yellow-400 fixed z-50 bottom-10 -right-14 duration-200 animate-bounce" type="button">
         <i class="fa-solid fa-arrow-up font-black text-gray-900 text-xl"></i>
     </button>
 
