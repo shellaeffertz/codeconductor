@@ -34,9 +34,26 @@ const contacts = [
 ];
 
 const handleContactCopy = (value) => {
-  navigator.clipboard.writeText(value);
-  copiedContact.value = value;
-  setTimeout(() => (copiedContact.value = null), 2000);
+  try {
+
+    if (navigator.clipboard) {
+
+      navigator.clipboard.writeText(value);
+    } else {
+
+      const textArea = document.createElement('textarea');
+      textArea.value = value;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+    }
+
+    copiedContact.value = value;
+    setTimeout(() => (copiedContact.value = null), 2000);
+  } catch (err) {
+    console.error('Failed to copy:', err);
+  }
 };
 
 const observeElements = (elements) => {
