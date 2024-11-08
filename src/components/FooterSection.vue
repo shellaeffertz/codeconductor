@@ -1,5 +1,6 @@
 <script setup>
 
+import Logo from "./Logo.vue";
 import { onMounted } from 'vue';
 
 onMounted(() => {
@@ -19,18 +20,13 @@ onMounted(() => {
       
       <!-- Zewana Info & Social Links -->
       <div class="space-y-6 opacity-0 transform translate-y-8 transition-all duration-700">
-        <div class="flex items-center">
+        <div class="flex-shrink-0">
           <a href="#" class="flex items-center group">
-            <div
-              class="logo-icon w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center transform transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125"
+            <div 
+              class="logo-icon transform transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125"
             >
-              <i class="fa-solid fa-dove text-xl text-yellow-600"></i>
+              <Logo class="w-20 aspect-square" />
             </div>
-            <span
-              class="ml-3 text-white font-bold text-3xl transform transition-transform duration-300 group-hover:translate-x-1"
-            >
-              Portfolio
-            </span>
           </a>
         </div>
         <ul class="flex gap-4">

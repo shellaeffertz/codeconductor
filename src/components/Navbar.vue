@@ -1,4 +1,6 @@
 <script setup>
+
+import Logo from "./Logo.vue";
 import { ref, onMounted, onUnmounted } from "vue";
 
 const isMenuOpen = ref(false);
@@ -75,15 +77,10 @@ const socialLinks = [
       <div class="flex-shrink-0">
         <a href="#" class="flex items-center group">
           <div 
-            class="logo-icon w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center transform transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125"
+            class="logo-icon transform transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125"
           >
-            <i class="fa-solid fa-dove text-2xl text-yellow-600"></i>
+            <Logo class="w-16 aspect-square" />
           </div>
-          <span 
-            class="ml-3 text-white font-bold text-xl transform transition-transform duration-300 group-hover:translate-x-1"
-          >
-            Portfolio
-          </span>
         </a>
       </div>
 

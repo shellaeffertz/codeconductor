@@ -55,7 +55,7 @@ onMounted(() => {
         <div class="space-y-4">
           <h3 class="text-yellow-500 text-xl font-medium tracking-wide">We Are</h3>
           <h1 class="font-black text-6xl md:text-7xl bg-gradient-to-r from-white to-gray-300 bg-clip-text">
-            Company Freelancers
+            CodeConductor
           </h1>
           <div class="h-2 w-24 bg-yellow-500 rounded-full"></div>
         </div>
@@ -64,9 +64,9 @@ onMounted(() => {
           We are a team of freelancers who deliver customized web development, design, and digital solutions that turn ideas into impactful products. Let's bring your vision to life with quality and creativity.
         </p>
 
-        <button class="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold rounded-full duration-300 transform hover:scale-105">
+        <a href="#contact" class="block w-fit px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-semibold rounded-full duration-300 transform hover:scale-105">
           Get Started
-        </button>
+        </a>
       </div>
 
       <div 
