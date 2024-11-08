@@ -54,31 +54,31 @@ onMounted(() => {
         <h3 class="text-yellow-500 font-bold mb-4">Quick Links</h3>
         <ul class="space-y-4">
           <li class="hover:translate-x-1 duration-300">
-            <a href="#" class="block hover:text-yellow-500 space-x-2">
+            <a href="#home" class="block hover:text-yellow-500 space-x-2">
               <i class="fa-solid fa-angles-right"></i>
               <span>Home</span>
             </a>
           </li>
           <li class="hover:translate-x-1 duration-300">
-            <a href="#" class="block hover:text-yellow-500 space-x-2">
+            <a href="#about-us" class="block hover:text-yellow-500 space-x-2">
               <i class="fa-solid fa-angles-right"></i>
               <span>About Us</span>
             </a>
           </li>
           <li class="hover:translate-x-1 duration-300">
-            <a href="#" class="block hover:text-yellow-500 space-x-2">
+            <a href="#services" class="block hover:text-yellow-500 space-x-2">
               <i class="fa-solid fa-angles-right"></i>
               <span>Services</span>
             </a>
           </li>
           <li class="hover:translate-x-1 duration-300">
-            <a href="#" class="block hover:text-yellow-500 space-x-2">
+            <a href="#projects" class="block hover:text-yellow-500 space-x-2">
               <i class="fa-solid fa-angles-right"></i>
               <span>Projects</span>
             </a>
           </li>
           <li class="hover:translate-x-1 duration-300">
-            <a href="#" class="block hover:text-yellow-500 space-x-2">
+            <a href="#skills" class="block hover:text-yellow-500 space-x-2">
               <i class="fa-solid fa-angles-right"></i>
               <span>Skills</span>
             </a>

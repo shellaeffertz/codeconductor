@@ -15,7 +15,7 @@ import BackgroundView from './components/BackgroundView.vue';
 
 </script>
 
-<template>
+<template> 
 
   <ScrollProgress />
 
@@ -31,7 +31,7 @@ import BackgroundView from './components/BackgroundView.vue';
 
   <Testimonials />
 
-  <OurSkills />
+  <OurSkills id="skills" />
 
   <Projects id="projects" />
 
