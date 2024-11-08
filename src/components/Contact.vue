@@ -27,7 +27,7 @@ const contacts = [
   },
   {
     label: 'Telegram',
-    value: 't.me/mycompany',
+    value: 't.me/CodeConductor1',
     copyOnClick: false,
     icon: 'fa-brands fa-telegram',
   },
